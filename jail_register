@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import datetime
+import json
+
+
+INPUTFILE='/mnt/tankstate/jails/jails'
+
+with open(INPUTFILE) as f:
+    inp = f.read()
+
+sample = {}
+sample['content'] = inp
+
+sample['timestamp'] = datetime.datetime.timestamp(datetime.datetime.now())
+
+j = json.dumps(sample)
+
+print(j)
+
